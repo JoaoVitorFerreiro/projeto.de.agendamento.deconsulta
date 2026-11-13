@@ -22,6 +22,12 @@ public class Paciente {
     private String convenio;
     private LocalDate dataNascimento;
     @Column(length = 255)
+    private String endereco;
+    @Column(length = 100)
+    private String naturalidade;
+    @Column(length = 30)
+    private String estadoCivil;
+    @Column(length = 255)
     private String email;
     @Column(length = 2000)
     private String observacao;
@@ -29,11 +35,14 @@ public class Paciente {
     protected Paciente() {}
 
     public Paciente(String nomeCompleto, String telefone, String convenio, LocalDate dataNascimento,
-            String email, String observacao) {
+            String endereco, String naturalidade, String estadoCivil, String email, String observacao) {
         this.nomeCompleto = nomeCompleto;
         this.telefone = telefone;
         this.convenio = convenio;
         this.dataNascimento = dataNascimento;
+        this.endereco = endereco;
+        this.naturalidade = naturalidade;
+        this.estadoCivil = estadoCivil;
         this.email = email;
         this.observacao = observacao;
     }
@@ -47,6 +56,12 @@ public class Paciente {
     public void setConvenio(String convenio) { this.convenio = convenio; }
     public LocalDate getDataNascimento() { return dataNascimento; }
     public void setDataNascimento(LocalDate dataNascimento) { this.dataNascimento = dataNascimento; }
+    public String getEndereco() { return endereco; }
+    public void setEndereco(String endereco) { this.endereco = endereco; }
+    public String getNaturalidade() { return naturalidade; }
+    public void setNaturalidade(String naturalidade) { this.naturalidade = naturalidade; }
+    public String getEstadoCivil() { return estadoCivil; }
+    public void setEstadoCivil(String estadoCivil) { this.estadoCivil = estadoCivil; }
     public String getEmail() { return email; }
     public void setEmail(String email) { this.email = email; }
     public String getObservacao() { return observacao; }

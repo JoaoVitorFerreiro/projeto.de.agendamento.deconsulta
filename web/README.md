@@ -1,6 +1,5 @@
 # Frontend VidaSaúde
 
-O frontend foi integrado ao Spring Boot e está em `../projeto/src/main/resources/static`.
-Os arquivos servidos são `index.html`, `styles.css`, `auth.css` e `app.js`.
+O frontend oficial está em `../projeto/src/main/resources/static` e usa somente HTML, CSS e JavaScript nativos. A aplicação é servida pelo Spring Boot em `http://localhost:8080`.
 
-Inicie o backend e abra `http://localhost:8080`. Não é necessário iniciar um servidor Node/Vite.
+Não há dependências de Lovable, React, Supabase, Node ou Vite necessárias para executar o frontend.

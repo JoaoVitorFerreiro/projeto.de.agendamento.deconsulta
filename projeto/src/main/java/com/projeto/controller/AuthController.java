@@ -8,7 +8,9 @@ import com.projeto.service.AuthService;
 import jakarta.servlet.http.HttpServletRequest;
 import jakarta.servlet.http.HttpServletResponse;
 import jakarta.validation.Valid;
+import java.util.Map;
 import org.springframework.security.core.Authentication;
+import org.springframework.security.web.csrf.CsrfToken;
 import org.springframework.security.web.authentication.logout.SecurityContextLogoutHandler;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PostMapping;
@@ -37,6 +39,11 @@ public class AuthController {
     public UsuarioResponse entrar(@Valid @RequestBody LoginRequest dados,
             HttpServletRequest request, HttpServletResponse response) {
         return auth.entrar(dados, request, response);
+    }
+
+    @GetMapping("/csrf")
+    public Map<String, String> tokenCsrf(CsrfToken csrfToken) {
+        return Map.of("token", csrfToken.getToken());
     }
 
     @GetMapping("/me")
