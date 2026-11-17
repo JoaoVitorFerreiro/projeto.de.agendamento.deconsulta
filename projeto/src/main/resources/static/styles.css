@@ -82,6 +82,7 @@ button { cursor: pointer; }
 .stat-card:nth-child(4) .stat-icon { color: #d83243; background: #ffebed; }
 .stat-top { display: flex; align-items: center; justify-content: space-between; color: #667788; font-size: 12px; }
 .stat-icon { width: 34px; height: 34px; display: inline-grid; place-items: center; border-radius: 9px; color: var(--blue); background: var(--blue-light); font-size: 17px; }
+.stat-icon svg { width: 18px; height: 18px; fill: none; stroke: currentColor; stroke-linecap: round; stroke-linejoin: round; stroke-width: 1.8; }
 .stat-value { color: #1b2d3d; font-size: 25px; font-weight: 700; letter-spacing: -.5px; }
 .stat-note { margin-top: 3px; color: var(--muted); font-size: 10px; }
 .agenda-grid { display: grid; grid-template-columns: minmax(0, 1fr) 290px; align-items: start; gap: 18px; }
