@@ -1,0 +1,14 @@
+{
+    "configurations": [
+        {
+            "type": "java",
+            "name": "Spring Boot-ProjetoIntegradorGp8Application<projetoIntegradorGP8>",
+            "request": "launch",
+            "cwd": "${workspaceFolder}",
+            "mainClass": "com.projeto.ProjetoIntegradorGp8Application",
+            "projectName": "projetoIntegradorGP8",
+            "args": "",
+            "envFile": "${workspaceFolder}/.env"
+        }
+    ]
+}

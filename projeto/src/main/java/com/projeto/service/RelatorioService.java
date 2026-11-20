@@ -11,13 +11,17 @@ import org.springframework.transaction.annotation.Transactional;
 public class RelatorioService {
     private final PacienteRepository pacientes;
     private final AgendamentoRepository agendamentos;
+    private final AuditoriaService auditoria;
 
-    public RelatorioService(PacienteRepository pacientes, AgendamentoRepository agendamentos) {
+    public RelatorioService(PacienteRepository pacientes, AgendamentoRepository agendamentos,
+            AuditoriaService auditoria) {
         this.pacientes = pacientes;
         this.agendamentos = agendamentos;
+        this.auditoria = auditoria;
     }
 
     public RelatorioResponse obter() {
+        auditoria.registrar("CLINIC_REPORT_ACCESSED", "report", null);
         var todos = agendamentos.findAll();
         return new RelatorioResponse(pacientes.count(),
                 todos.stream().filter(a -> a.getStatus().equals("concluído")).count(),
